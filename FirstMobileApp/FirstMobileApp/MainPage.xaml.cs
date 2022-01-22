@@ -13,6 +13,8 @@ namespace FirstMobileApp
         public MainPage()
         {
             InitializeComponent();
+
+            //some comment to test git
         }
     }
 }
