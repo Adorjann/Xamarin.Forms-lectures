@@ -2,9 +2,82 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FirstMobileApp.MainPage">
+    <ContentPage.Resources>
+        <Style TargetType="Frame" x:Key="UserAframe">
+            <Setter Property="BackgroundColor" Value="#d7f0ff "/>
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="Padding" Value="8,8,5,5" />
+            <Setter Property="HasShadow" Value="true"/>
+        </Style>
+        <Style TargetType="StackLayout" x:Key="UserAstack">
+            <Setter Property="Orientation" Value="Horizontal" />
+            <Setter Property="Margin" Value="80,0,15,15" />
+        </Style>
+        <Style TargetType="Frame" x:Key="UserAimageFrame">
+            <Setter Property="CornerRadius" Value="100"/>
+            <Setter Property="HasShadow" Value="true"/>
+            <Setter Property="WidthRequest" Value="55"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Margin" Value="0,25,0,25"/>
 
-    <StackLayout>
-        
+        </Style>
+        <Style TargetType="Label" x:Key="textMessage">
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+        </Style>    
+    </ContentPage.Resources>
+
+    <StackLayout BackgroundColor="WhiteSmoke">
+        <Frame CornerRadius="10"
+               Margin="50,15,50,15"
+               Padding="10,8">
+            <Label Text="Messages sent by participants in this conversation are encrypted"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"/>
+        </Frame>
+        <StackLayout Style="{StaticResource Key=UserAstack}">
+            <Frame Style="{StaticResource Key=UserAframe}">
+                <StackLayout >
+                    <Label Style="{StaticResource Key=textMessage}" 
+                           Text="Remember my product idea? I have updates but it's sensitive."/>
+                    <Label Text="09:28"/>
+                </StackLayout>
+            </Frame>
+            <Frame Style="{StaticResource Key=UserAimageFrame}">
+                <Image Source="aperson" Aspect="AspectFill"/>    
+            </Frame>
+            
+        </StackLayout>
+        <StackLayout Style="{StaticResource Key=UserAstack}" Margin="12,0,85,15" >
+            <Frame Style="{StaticResource Key=UserAimageFrame}"
+                   >
+                <Image Source="vperson" Aspect="AspectFill"/>
+            </Frame>
+            <Frame Style="{StaticResource Key=UserAframe}"
+                   BackgroundColor="#eff6fb"
+                   Padding="10,10">
+                <StackLayout >
+                    <Label Style="{StaticResource Key=textMessage}" 
+                           Text="Send them to me here. Everything's encrypted"/>
+                    <Label Text="09:29" HorizontalTextAlignment="end" />
+                </StackLayout>
+            </Frame>
+            
+
+        </StackLayout>
+        <StackLayout Style="{StaticResource Key=UserAstack}">
+            <Frame Style="{StaticResource Key=UserAframe}">
+                <StackLayout >
+                    <Image Source="topsecret" Aspect="AspectFill" HeightRequest="175"/>
+                    <Label Text="09:30"/>
+                </StackLayout>
+            </Frame>
+            <Frame Style="{StaticResource Key=UserAimageFrame}" WidthRequest="55" Margin="5,75,20,80">
+                <Image Source="aperson" Aspect="AspectFill"/>
+            </Frame>
+
+        </StackLayout>
     </StackLayout>
 
 </ContentPage>
