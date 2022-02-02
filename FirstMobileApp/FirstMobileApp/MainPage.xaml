@@ -2,23 +2,106 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FirstMobileApp.MainPage">
+    <ContentPage.Resources>
+        <Style TargetType="Frame" x:Key="SentMessageStyle">
+            <Setter Property="CornerRadius" Value="15"/>
+            <Setter Property="BackgroundColor" Value="#d7f0ff"/>
+            <Setter Property="Margin" Value="40,0,20,15"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="HasShadow" Value="true"/>
+        </Style>
+        <Style TargetType="Label" x:Key="MessageText">
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+        <Style TargetType="Frame" x:Key="ReceivedMessageStyle">
+            <Setter Property="CornerRadius" Value="15"/>
+            <Setter Property="BackgroundColor" Value="#eff6fb"/>
+            <Setter Property="Margin" Value="15,0,40,15"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="HasShadow" Value="true"/>
+        </Style>
+    </ContentPage.Resources>
+    
+    <ScrollView 
+        VerticalScrollBarVisibility="Never">
+    <StackLayout BackgroundColor="WhiteSmoke">
+        <Frame BackgroundColor="white" 
+           CornerRadius="20"
+           HasShadow="true"
+               Margin="40,15,40,15">
+            <StackLayout>
+                <Label  
+                    Text="Messages sent by partisipants in this conversation are encrypted"
+                       FontSize="15"
+                       TextColor="Gray"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center"/>
+                
+            </StackLayout>
 
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+        <Frame Style="{StaticResource Key=SentMessageStyle}">
+            <StackLayout>
+                <Label Style="{StaticResource Key=MessageText}" 
+                    Text="Remember my product idea? I have updates, but it's sensitive."
+                   />
+                <Label Text="09:29"
+                       HorizontalTextAlignment="Start"/>
+            </StackLayout>
+
+
+        </Frame>
+        <Frame Style="{StaticResource Key=ReceivedMessageStyle}">
+            <StackLayout>
+                <Label Style="{StaticResource Key=MessageText}" 
+                    Text="Send them to me here, Everything is encrypted"
+                   />
+                <Label Text="09:29"
+                       HorizontalTextAlignment="End"/>
+            </StackLayout>
+
+
+        </Frame>
+        <Frame Style="{StaticResource Key=SentMessageStyle}">
+            <StackLayout>
+                <Image Source="topsecret"/>
+                <Label Text="09:33"
+                       HorizontalTextAlignment="Start"/>
+            </StackLayout>
+        </Frame>
+        
+        <Frame Style="{StaticResource Key=SentMessageStyle}">
+            <StackLayout>
+                <Label Style="{StaticResource Key=MessageText}" 
+                    Text="Remember my product idea? I have updates, but it's sensitive."
+                   />
+                <Label Text="09:29"
+                       HorizontalTextAlignment="Start"/>
+            </StackLayout>
+
+
+        </Frame>
+        <Frame Style="{StaticResource Key=ReceivedMessageStyle}">
+            <StackLayout>
+                <Label Style="{StaticResource Key=MessageText}" 
+                    Text="Send them to me here, Everything is encrypted"
+                   />
+                <Label Text="09:29"
+                       HorizontalTextAlignment="End"/>
+            </StackLayout>
+
+
+        </Frame>
+        <Frame Style="{StaticResource Key=SentMessageStyle}">
+            <StackLayout>
+                <Image Source="topsecret"/>
+                <Label Text="09:33"
+                       HorizontalTextAlignment="Start"/>
+            </StackLayout>
+        </Frame>
+
     </StackLayout>
+    </ScrollView>
 
 </ContentPage>
