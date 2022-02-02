@@ -34,35 +34,53 @@
         <Label Grid.Row="0" 
                Grid.Column="0" 
                Grid.ColumnSpan="4"
-               Text="42"
+               Text="0"
                TextColor="White"
                VerticalTextAlignment="Center"
                HorizontalTextAlignment="End"
-               FontSize="100"/>
+               FontSize="85"
+               x:Name="Display"/>
         <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
-                 Text="C"  Style="{StaticResource Key=OrangeButton}" FontSize="25"/>
+                 Text="C"  Style="{StaticResource Key=OrangeButton}" FontSize="25" Clicked="C_Clicked"/>
         <Button Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" 
-                Text="BACK" Style="{StaticResource Key=OrangeButton}" FontSize="25"/>
+                Text="BACK" Style="{StaticResource Key=OrangeButton}" FontSize="25" Clicked="Back_Clicked"/>
         
-        <Button Grid.Row="2" Grid.Column="0" Text="7" Style="{StaticResource Key=WhiteButton}"/>
-        <Button Grid.Row="2" Grid.Column="1" Text="8" Style="{StaticResource Key=WhiteButton}"/>
-        <Button Grid.Row="2" Grid.Column="2" Text="9" Style="{StaticResource Key=WhiteButton}"/>
-        <Button Grid.Row="2" Grid.Column="3" Text="/" Style="{StaticResource Key=OrangeButton}"/>
+        <Button Grid.Row="2" Grid.Column="0" Text="7" 
+                Style="{StaticResource Key=WhiteButton}" x:Name="Num7" />
+        <Button Grid.Row="2" Grid.Column="1" Text="8" 
+                Style="{StaticResource Key=WhiteButton}" x:Name="Num8"/>
+        <Button Grid.Row="2" Grid.Column="2" Text="9" 
+                Style="{StaticResource Key=WhiteButton}" x:Name="Num9"/>
         
-        <Button Grid.Row="3" Grid.Column="0" Text="4" Style="{StaticResource Key=WhiteButton}"/>
-        <Button Grid.Row="3" Grid.Column="1" Text="5" Style="{StaticResource Key=WhiteButton}"/>
-        <Button Grid.Row="3" Grid.Column="2" Text="6" Style="{StaticResource Key=WhiteButton}"/>
-        <Button Grid.Row="3" Grid.Column="3" Text="*" Style="{StaticResource Key=OrangeButton}"/>
+        <Button Grid.Row="2" Grid.Column="3" Text="/" 
+                Style="{StaticResource Key=OrangeButton}" x:Name="Division"/>
         
-        <Button Grid.Row="4" Grid.Column="0" Text="1" Style="{StaticResource Key=WhiteButton}"/>
-        <Button Grid.Row="4" Grid.Column="1" Text="2" Style="{StaticResource Key=WhiteButton}"/>
-        <Button Grid.Row="4" Grid.Column="2" Text="3" Style="{StaticResource Key=WhiteButton}"/>
-        <Button Grid.Row="4" Grid.Column="3" Text="-" Style="{StaticResource Key=OrangeButton}"/>
+        <Button Grid.Row="3" Grid.Column="0" Text="4" 
+                Style="{StaticResource Key=WhiteButton}" x:Name="Num4"/>
+        <Button Grid.Row="3" Grid.Column="1" Text="5" 
+                Style="{StaticResource Key=WhiteButton}" x:Name="Num5"/>
+        <Button Grid.Row="3" Grid.Column="2" Text="6" 
+                Style="{StaticResource Key=WhiteButton}" x:Name="Num6"/>
+        <Button Grid.Row="3" Grid.Column="3" Text="*" 
+                Style="{StaticResource Key=OrangeButton}" x:Name="Multiplication"/>
         
-        <Button Grid.Row="5" Grid.Column="0" Text="0" Style="{StaticResource Key=WhiteButton}"/>
-        <Button Grid.Row="5" Grid.Column="1" Text="." Style="{StaticResource Key=OrangeButton}"/>
-        <Button Grid.Row="5" Grid.Column="2" Text="=" Style="{StaticResource Key=OrangeButton}"/>
-        <Button Grid.Row="5" Grid.Column="3" Text="+" Style="{StaticResource Key=OrangeButton}"/>
+        <Button Grid.Row="4" Grid.Column="0" Text="1" 
+                Style="{StaticResource Key=WhiteButton}" x:Name="Num1"/>
+        <Button Grid.Row="4" Grid.Column="1" Text="2" 
+                Style="{StaticResource Key=WhiteButton}" x:Name="Num2"/>
+        <Button Grid.Row="4" Grid.Column="2" Text="3" 
+                Style="{StaticResource Key=WhiteButton}" x:Name="Num3"/>
+        <Button Grid.Row="4" Grid.Column="3" Text="-" 
+                Style="{StaticResource Key=OrangeButton}" x:Name="Substraction"/>
+        
+        <Button Grid.Row="5" Grid.Column="0" Text="0" 
+                Style="{StaticResource Key=WhiteButton}" x:Name="Num0"/>
+        <Button Grid.Row="5" Grid.Column="1" Text="." 
+                Style="{StaticResource Key=OrangeButton}" x:Name="Dot"/>
+        <Button Grid.Row="5" Grid.Column="2" Text="="  Clicked="Equals_Clicked"
+                Style="{StaticResource Key=OrangeButton}"/>
+        <Button Grid.Row="5" Grid.Column="3" Text="+" 
+                Style="{StaticResource Key=OrangeButton}" x:Name="Addition"/>
     </Grid>
 
 </ContentPage>
