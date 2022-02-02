@@ -33,7 +33,7 @@ namespace FirstMobileApp
         {
             Button button = (Button)sender;
 
-            if ( CheckLastInput() )
+            if ( !IsLastInputOperand() )
             {
                 CheckLabelLenght();
                 Display.Text += button.Text;
@@ -45,7 +45,7 @@ namespace FirstMobileApp
             
         }
 
-        private bool CheckLastInput()
+        private bool IsLastInputOperand()
         {
             string lastInput;
             if (Display.Text.Length > 1)
@@ -57,17 +57,24 @@ namespace FirstMobileApp
                 lastInput = Display.Text;
             }
 
-            if(lastInput != Division.Text &&
-                lastInput != Multiplication.Text &&
-                lastInput != Substraction.Text &&
-                lastInput != Addition.Text &&
-                lastInput != Dot.Text)
+            if(!isOperand(lastInput))
             {
-              return true;
+                return false; 
+            }
+            return true;
+        }
+        private bool isOperand(string charToCheck)
+        {
+            if (charToCheck == Division.Text ||
+                charToCheck == Multiplication.Text ||
+                charToCheck == Substraction.Text ||
+                charToCheck == Addition.Text ||
+                charToCheck == Dot.Text)
+            {
+                return true;
             }
             return false;
         }
-
         private void CheckLabelLenght()
         {
             if (Display.Text.Length > 10)
@@ -94,7 +101,58 @@ namespace FirstMobileApp
             CheckLabelLenght();
             Button button = (Button)sender;
             Display.Text = Display.Text == "0" ? button.Text : Display.Text += button.Text;
+            
+            if(button.Text == ")")
+            {
+                EmptyBracketChecker();
+                OpenBracketPresentChecker();
+            }else if(button.Text == "(")
+            {
+                OperandBeforeBracketChecker();
+            }
+            
+        }
 
+        private void OpenBracketPresentChecker()
+        {
+           
+            if (Display.Text.Length > 1 && !Display.Text.Contains("("))
+            {
+               
+                Display.Text = Display.Text.Substring(0, Display.Text.Length - 1);
+                
+            }
+        }
+
+        private void OperandBeforeBracketChecker()
+        {
+             
+            if (Display.Text.Length > 1)
+            {
+                string lastInput = Display.Text.Substring(Display.Text.Length - 2, 1);
+                if (!isOperand(lastInput))
+                {
+                    Display.Text = Display.Text.Substring(0, Display.Text.Length - 1);
+                }
+            }
+        }
+
+        private void EmptyBracketChecker()
+        {
+            string lastInput;
+            if (Display.Text.Length > 1)
+            {
+                lastInput = Display.Text.Substring(Display.Text.Length - 2, 2);
+                if(lastInput == "()")
+                {
+                    Display.Text = Display.Text.Substring(0, Display.Text.Length - 2);
+                }
+            }
+            else
+            {
+                Display.Text = "0";
+
+            }
 
         }
 
