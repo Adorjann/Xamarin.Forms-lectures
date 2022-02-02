@@ -178,7 +178,18 @@ namespace FirstMobileApp
 
         private void Equals_Clicked(object sender, EventArgs e)
         {
-            Display.Text = Evaluate(Display.Text).ToString();
+            if (Display.Text.Contains("("))
+            {
+                if (Display.Text.Contains(")"))
+                {
+                    Display.Text = Evaluate(Display.Text).ToString();
+                }
+            }
+            else
+            {
+                Display.Text = Evaluate(Display.Text).ToString();
+            }
+            
         }
         private double Evaluate(string expression)
         {
