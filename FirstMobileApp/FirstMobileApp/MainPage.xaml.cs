@@ -15,7 +15,7 @@ namespace FirstMobileApp
         {
             InitializeComponent();
 
-            SubscribeNumberButtons();
+            SubscribeNumberAndBracketButtons();
             SubscibeOperandButtons();
 
         }
@@ -38,6 +38,9 @@ namespace FirstMobileApp
                 CheckLabelLenght();
                 Display.Text += button.Text;
 
+            }else if(button.Text == "-")
+            {
+                Display.Text += "(-";
             }
             
         }
@@ -77,11 +80,11 @@ namespace FirstMobileApp
             }
         }
 
-        private void SubscribeNumberButtons()
+        private void SubscribeNumberAndBracketButtons()
         {
             List<Button> allNumbers = new List<Button>()
             {
-                Num0,Num1,Num2,Num3,Num4,Num5,Num6,Num7,Num8,Num9
+                Num0,Num1,Num2,Num3,Num4,Num5,Num6,Num7,Num8,Num9,OpenBracket,ClosedBracket
             };
             allNumbers.ForEach(button => button.Clicked += NumberClicked);
         }

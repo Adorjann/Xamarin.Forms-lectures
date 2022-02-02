@@ -40,10 +40,14 @@
                HorizontalTextAlignment="End"
                FontSize="85"
                x:Name="Display"/>
-        <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
+        <Button Grid.Row="1" Grid.Column="0" 
                  Text="C"  Style="{StaticResource Key=OrangeButton}" FontSize="25" Clicked="C_Clicked"/>
-        <Button Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" 
+        <Button Grid.Row="1" Grid.Column="1" 
                 Text="BACK" Style="{StaticResource Key=OrangeButton}" FontSize="25" Clicked="Back_Clicked"/>
+        <Button Grid.Row="1" Grid.Column="2" Text="(" 
+                Style="{StaticResource Key=OrangeButton}" x:Name="OpenBracket"/>
+        <Button Grid.Row="1" Grid.Column="3" Text=")" 
+                Style="{StaticResource Key=OrangeButton}" x:Name="ClosedBracket"/>
         
         <Button Grid.Row="2" Grid.Column="0" Text="7" 
                 Style="{StaticResource Key=WhiteButton}" x:Name="Num7" />
@@ -51,7 +55,6 @@
                 Style="{StaticResource Key=WhiteButton}" x:Name="Num8"/>
         <Button Grid.Row="2" Grid.Column="2" Text="9" 
                 Style="{StaticResource Key=WhiteButton}" x:Name="Num9"/>
-        
         <Button Grid.Row="2" Grid.Column="3" Text="/" 
                 Style="{StaticResource Key=OrangeButton}" x:Name="Division"/>
         
