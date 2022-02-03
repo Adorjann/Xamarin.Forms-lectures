@@ -14,11 +14,12 @@
             <Setter Property="Margin" Value="80,0,15,15" />
         </Style>
         <Style TargetType="Frame" x:Key="UserAimageFrame">
-            <Setter Property="CornerRadius" Value="100"/>
+            <Setter Property="CornerRadius" Value="50"/>
             <Setter Property="HasShadow" Value="true"/>
             <Setter Property="WidthRequest" Value="55"/>
             <Setter Property="Padding" Value="0"/>
-            <Setter Property="Margin" Value="0,25,0,25"/>
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
 
         </Style>
         <Style TargetType="Label" x:Key="textMessage">
@@ -45,36 +46,35 @@
                 </StackLayout>
             </Frame>
             <Frame Style="{StaticResource Key=UserAimageFrame}">
-                <Image Source="aperson" Aspect="AspectFill"/>    
+                <Image Source="aperson" />    
             </Frame>
             
         </StackLayout>
         <StackLayout Style="{StaticResource Key=UserAstack}" Margin="12,0,85,15" >
             <Frame Style="{StaticResource Key=UserAimageFrame}"
                    >
-                <Image Source="vperson" Aspect="AspectFill"/>
+                <Image Source="vperson" />
             </Frame>
             <Frame Style="{StaticResource Key=UserAframe}"
-                   BackgroundColor="#eff6fb"
-                   Padding="10,10">
+                   BackgroundColor="#eff6fb">
                 <StackLayout >
                     <Label Style="{StaticResource Key=textMessage}" 
                            Text="Send them to me here. Everything's encrypted"/>
-                    <Label Text="09:29" HorizontalTextAlignment="end" />
+                    <Label Text="09:29" HorizontalTextAlignment="End" />
                 </StackLayout>
             </Frame>
             
 
         </StackLayout>
         <StackLayout Style="{StaticResource Key=UserAstack}">
-            <Frame Style="{StaticResource Key=UserAframe}">
+            <Frame Style="{StaticResource Key=UserAframe}" >
                 <StackLayout >
-                    <Image Source="topsecret" Aspect="AspectFill" HeightRequest="175"/>
+                    <Image Source="topsecret" HeightRequest="175" Margin="2,2"/>
                     <Label Text="09:30"/>
                 </StackLayout>
             </Frame>
-            <Frame Style="{StaticResource Key=UserAimageFrame}" WidthRequest="55" Margin="5,75,20,80">
-                <Image Source="aperson" Aspect="AspectFill"/>
+            <Frame Style="{StaticResource Key=UserAimageFrame}">
+                <Image Source="aperson"/>
             </Frame>
 
         </StackLayout>
