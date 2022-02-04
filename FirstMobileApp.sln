@@ -7,7 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstMobileApp.Android", "F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstMobileApp.iOS", "FirstMobileApp\FirstMobileApp.iOS\FirstMobileApp.iOS.csproj", "{34655159-B79C-4279-9322-1CEFED9A2ACC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstMobileApp", "FirstMobileApp\FirstMobileApp\FirstMobileApp.csproj", "{1ABE75AC-02C0-438E-B66A-E247EEC350EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstMobileApp", "FirstMobileApp\FirstMobileApp\FirstMobileApp.csproj", "{1ABE75AC-02C0-438E-B66A-E247EEC350EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{328E8397-0F0F-4BE4-AF62-1C4656CAE196}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
