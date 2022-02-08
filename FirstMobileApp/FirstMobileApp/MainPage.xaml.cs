@@ -14,7 +14,8 @@ namespace FirstMobileApp
         {
             InitializeComponent();
 
-            //some comment to test git
+           // LogoImage.Source = ImageSource.FromResource("FirstMobileApp.Images.logo.png", typeof(MainPage).Assembly);
+
         }
     }
 }
