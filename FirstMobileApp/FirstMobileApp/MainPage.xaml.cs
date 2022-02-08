@@ -14,7 +14,7 @@ namespace FirstMobileApp
         {
             InitializeComponent();
 
-            //some comment to test git
+
         }
     }
 }
