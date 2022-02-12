@@ -14,7 +14,11 @@ namespace FirstMobileApp
         {
             InitializeComponent();
 
-            //some comment to test git
+        }
+
+        private void Switch_Toggled(object sender, ToggledEventArgs e)
+        {
+            SwitchStateLabel.Text = e.Value? "Toogled" : "NotToggled";
         }
     }
 }
