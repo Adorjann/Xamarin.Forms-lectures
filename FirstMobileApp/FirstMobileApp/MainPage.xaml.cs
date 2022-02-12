@@ -14,7 +14,12 @@ namespace FirstMobileApp
         {
             InitializeComponent();
 
-            //some comment to test git
+
+        }
+
+        private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            SliderValueLabel.Text = e.NewValue.ToString();
         }
     }
 }
