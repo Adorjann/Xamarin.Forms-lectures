@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FirstMobileApp.Resources;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -15,6 +16,17 @@ namespace FirstMobileApp
             InitializeComponent();
 
             //some comment to test git
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            var mergedDictionaries = 
+                Application.Current.Resources.MergedDictionaries;
+            mergedDictionaries.Clear();
+            mergedDictionaries.Add(new Light());
+
+
+
         }
     }
 }
