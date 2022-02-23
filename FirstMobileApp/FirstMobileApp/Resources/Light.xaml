@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FirstMobileApp.Resources.Light">
+
+    <Style x:Key="GridStyle" TargetType="Grid">
+        <Setter Property="BackgroundColor" Value="WhiteSmoke"/>
+    </Style>
+    
+    <Style x:Key="SliderStyle" TargetType="Slider">
+        <Setter Property="MinimumTrackColor" Value="Black"/>
+        <Setter Property="MaximumTrackColor" Value="Black"/>
+    </Style>
+    <Style x:Key="sLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Black" />
+    </Style>
+    
+</ResourceDictionary>

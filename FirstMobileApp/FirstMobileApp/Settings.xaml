@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FirstMobileApp.Settings">
+    
+    <Grid Style="{DynamicResource GridStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        
+        <Label Grid.Row="0"
+                Grid.Column="0" 
+                Text="DarkMode"
+                FontSize="20"
+                TextColor="Black"/>
+
+        <Switch x:Name="SwitchButton"
+                Grid.Row="0"
+                Grid.Column="1" 
+                Toggled="SwitchButton_Toggled"/>
+
+    </Grid>    
+</ContentPage>

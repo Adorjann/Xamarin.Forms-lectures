@@ -3,7 +3,68 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FirstMobileApp.MainPage">
 
-    <StackLayout>
-    </StackLayout>
+    
+        <Grid Padding="20,20" Style="{DynamicResource GridStyle}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" 
+                    TextColor="Black"
+                    VerticalOptions="Center"
+                    Text="Settings"
+                    Clicked="Button_Clicked"></Button>
+            
+            <BoxView Grid.Row="1"
+                     x:Name="Bowview"
+                     Margin="20,20,20,20"
+                     BackgroundColor="Black"
+                     CornerRadius="10"
+                     HeightRequest="400">
+            </BoxView>
+
+            <Slider Grid.Row="2" 
+                    x:Name="RedSlider"
+                    Minimum="0"
+                    Maximum="255"
+                    Style="{DynamicResource SliderStyle}"/>
+            <Label Grid.Row="3"
+                   Style="{DynamicResource sLabelStyle}"
+                   Text="0" 
+                   FontSize="20" 
+                   HorizontalTextAlignment="Center"/>
+
+            <Slider Grid.Row="4" 
+                    x:Name="GreenSlider"
+                    Minimum="0"
+                    Maximum="255"
+                    Style="{DynamicResource SliderStyle}" 
+                    ThumbColor="Green"/>
+            <Label Grid.Row="5" 
+                   Style="{DynamicResource sLabelStyle}"
+                   Text="0" 
+                   FontSize="20" 
+                   HorizontalTextAlignment="Center"/>
+
+            <Slider Grid.Row="6" 
+                    x:Name="BlueSlider"
+                    Minimum="0"
+                    Maximum="255"
+                    Style="{DynamicResource SliderStyle}" 
+                    ThumbColor="Blue"/>
+            <Label Grid.Row="7" 
+                   Style="{DynamicResource sLabelStyle}"
+                   Text="0" 
+                   FontSize="20" 
+                   HorizontalTextAlignment="Center"/>
+        </Grid>
+    
 
 </ContentPage>
