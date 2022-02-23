@@ -1,14 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FirstMobileApp.MainPage"
-             Title="Main page"
+             x:Class="FirstMobileApp.ThirdPage"
              NavigationPage.HasNavigationBar="False">
-
-    <Grid BackgroundColor="Red">
-        <Button Text="Navigate to second page"
-                VerticalOptions="Start"
+    
+    <Grid BackgroundColor="Green">
+        <Button VerticalOptions="Start"
+                Text="Navigate Back"
                 Clicked="Button_Clicked"/>
     </Grid>
-
+    
 </ContentPage>

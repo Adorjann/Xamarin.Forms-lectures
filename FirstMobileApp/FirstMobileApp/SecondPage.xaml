@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FirstMobileApp.SecondPage"
+             NavigationPage.HasNavigationBar="True">
+    
+    <Grid BackgroundColor="Blue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        
+        <Button  Grid.Row="0"
+            VerticalOptions="Start"
+                Text="Navigate to Third Page"
+                Clicked="Button_Clicked"/>
+        
+        <Label x:Name="numberLabel" 
+               FontSize="40" Grid.Row="1" Text="Empty" />
+
+    </Grid>
+</ContentPage>
