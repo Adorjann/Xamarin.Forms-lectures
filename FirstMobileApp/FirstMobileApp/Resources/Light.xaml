@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FirstMobileApp.Resources.Light">
 
+    <Color x:Key="GridCOlor">WhiteSmoke</Color>
     <Style x:Key="GridStyle" TargetType="Grid">
         <Setter Property="BackgroundColor" Value="WhiteSmoke"/>
     </Style>

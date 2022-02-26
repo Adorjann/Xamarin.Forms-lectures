@@ -28,7 +28,7 @@ namespace FirstMobileApp
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Settings(this));
+            Navigation.PushModalAsync(new Settings());
         }
 
         private void BlueSlider_ValueChanged(object sender, ValueChangedEventArgs e)
