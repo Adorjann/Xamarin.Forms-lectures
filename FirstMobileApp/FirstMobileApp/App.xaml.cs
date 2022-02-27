@@ -6,6 +6,7 @@ namespace FirstMobileApp
 {
     public partial class App : Application
     {
+        internal static bool IsDarkTheme = false;
         public App()
         {
             InitializeComponent();

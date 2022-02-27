@@ -10,7 +10,7 @@ namespace FirstMobileApp
         private int _green = 0;
         private int _blue = 0;
 
-        private bool _isDark = false;
+       
         public MainPage()
         {
             InitializeComponent();
@@ -24,7 +24,6 @@ namespace FirstMobileApp
             BlueSlider.Value = _blue;
         }
 
-        public bool IsDark { get => _isDark; set => _isDark = value; }
 
         private void Button_Clicked(object sender, EventArgs e)
         {

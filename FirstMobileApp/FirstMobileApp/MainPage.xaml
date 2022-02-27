@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FirstMobileApp.MainPage">
 
-    
-        <Grid Padding="20,20" Style="{DynamicResource GridStyle}">
+
+        <Grid Padding="20,20" BackgroundColor="{DynamicResource BackColor}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
