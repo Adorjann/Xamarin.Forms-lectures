@@ -15,6 +15,9 @@
         </Grid.RowDefinitions>
         <CollectionView
                         Grid.Row="0"
+            SelectionMode="Single"
+            SelectedItem="{Binding SelectedNote}"
+            SelectionChangedCommand="{Binding SelectedNoteChangedCommand}"
                         ItemsSource="{Binding NotesSource}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="viewmodels:NoteViewModel">

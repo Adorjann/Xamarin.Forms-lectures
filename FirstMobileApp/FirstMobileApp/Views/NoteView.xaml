@@ -2,9 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:FirstMobileApp.ViewModels"
+             xmlns:converters="clr-namespace:FirstMobileApp.Converters"
              x:Class="FirstMobileApp.Views.NoteView"
              x:DataType="viewmodels:NoteViewModel">
-
+    <ContentPage.Resources>
+        <converters:InvertedBooleanConverter x:Key="InvertedBooleanConverted" />
+    </ContentPage.Resources>
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -15,12 +18,19 @@
             <Entry Grid.Row="0"
                    Text="{Binding Title}"
                    Placeholder="Enter note title" />
+
             <Editor Grid.Row="1"
                    Text="{Binding Description}"
                    Placeholder="Enter note description" />
+
             <Button Grid.Row="2"
                     Command="{Binding SaveNoteCommand}"
                     Text="Save" />
+
+            <Button Grid.Row="2"
+                    IsVisible="{Binding IsNewNote, Converter={StaticResource InvertedBooleanConverted}}"
+                    Command="{Binding DeleteNoteCommand}"
+                    Text="Delete" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>

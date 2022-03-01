@@ -10,19 +10,35 @@ namespace FirstMobileApp.ViewModels
         private string _title;
         private string _description;
         private readonly Action _action;
+        private Guid _noteId;
+
+        public bool IsNewNote { get; }
         public ICommand SaveNoteCommand { get; set; }
+
+        public ICommand DeleteNoteCommand { get; set; }
 
         public NoteViewModel(Action action)
         {
             _action = action;
+            IsNewNote = true;
             SaveNoteCommand = new Command(OnSaveNoteCommand);
+            DeleteNoteCommand = new Command(OnDeleteNoteCommand);
         }
 
-        public NoteViewModel(Note note)
+        public NoteViewModel(Note note, Action action) : this(action)
         {
+            _noteId = note.Id;
+            IsNewNote = false;
             Title = note.Title;
             Description = note.Description;
-            SaveNoteCommand = new Command(OnSaveNoteCommand);
+        }
+
+        private void OnDeleteNoteCommand(object obj)
+        {
+            App.NotesRepository.DeleteNote(_noteId);
+            App.Current.MainPage.Navigation.PopModalAsync();
+
+            _action?.Invoke();
         }
 
         private void OnSaveNoteCommand()
