@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace FirstMobileApp.Models
 {
@@ -20,11 +18,9 @@ namespace FirstMobileApp.Models
             Title = title;
             Description = description;
         }
-        public Guid Id { get;}
-        public string Title { get;}
-        public string Description { get;}
 
-
-
+        public Guid Id { get; }
+        public string Title { get; }
+        public string Description { get; }
     }
 }

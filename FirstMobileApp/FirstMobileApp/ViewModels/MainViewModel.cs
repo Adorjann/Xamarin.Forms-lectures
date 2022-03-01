@@ -1,10 +1,6 @@
-﻿using FirstMobileApp.DataAccess;
-using FirstMobileApp.Views;
-using System;
-using System.Collections.Generic;
+﻿using FirstMobileApp.Views;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -13,11 +9,11 @@ namespace FirstMobileApp.ViewModels
     public class MainViewModel : BaseViewModel
     {
         private ObservableCollection<NoteViewModel> _notesSource;
-        
 
         public ICommand AddNoteCommand { get; }
-        public ObservableCollection<NoteViewModel> NotesSource 
-        { 
+
+        public ObservableCollection<NoteViewModel> NotesSource
+        {
             get => _notesSource;
             set
             {
@@ -43,8 +39,7 @@ namespace FirstMobileApp.ViewModels
             Application.Current
                 .MainPage
                 .Navigation
-                .PushModalAsync(new NoteView {BindingContext = new NoteViewModel(LoadNotes)});
-
+                .PushModalAsync(new NoteView { BindingContext = new NoteViewModel(LoadNotes) });
         }
     }
 }

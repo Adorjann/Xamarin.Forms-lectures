@@ -1,7 +1,5 @@
 ﻿using FirstMobileApp.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -12,6 +10,7 @@ namespace FirstMobileApp.ViewModels
         private string _title;
         private string _description;
         private readonly Action _action;
+        public ICommand SaveNoteCommand { get; set; }
 
         public NoteViewModel(Action action)
         {
@@ -19,9 +18,6 @@ namespace FirstMobileApp.ViewModels
             SaveNoteCommand = new Command(OnSaveNoteCommand);
         }
 
-        public ICommand SaveNoteCommand { get; set; }
-
-        
         public NoteViewModel(Note note)
         {
             Title = note.Title;
@@ -39,19 +35,19 @@ namespace FirstMobileApp.ViewModels
                 .PopModalAsync();
 
             _action?.Invoke();
-
         }
 
-        public string Title 
+        public string Title
         {
-            get=> _title;
+            get => _title;
             set
             {
                 _title = value;
                 OnPropertyChange(nameof(Title));
-            } 
+            }
         }
-        public string Description 
+
+        public string Description
         {
             get => _description;
             set
