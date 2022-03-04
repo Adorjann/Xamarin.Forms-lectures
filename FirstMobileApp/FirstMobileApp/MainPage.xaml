@@ -8,28 +8,33 @@
     <ContentPage.BindingContext>
         <viewmodels:MainViewModel />
     </ContentPage.BindingContext>
-    <Grid>
+    <Grid Padding="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
-        <CollectionView
-                        Grid.Row="0"
-            SelectionMode="Single"
-            SelectedItem="{Binding SelectedNote}"
-            SelectionChangedCommand="{Binding SelectedNoteChangedCommand}"
+        <CollectionView Grid.Row="0"
+                        SelectionMode="Single"
+                        SelectedItem="{Binding SelectedNote}"
+                        SelectionChangedCommand="{Binding SelectedNoteChangedCommand}"
                         ItemsSource="{Binding NotesSource}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="viewmodels:NoteViewModel">
-                    <StackLayout Padding="10">
-                        <Label FontSize="30"
-                               LineBreakMode="TailTruncation"
-                               MaxLines="2"
-                               Text="{Binding Title}" />
-                        <Label FontSize="30"
-                               LineBreakMode="TailTruncation"
-                               MaxLines="2"
-                               Text="{Binding Description}" />
+                    <StackLayout Margin="5">
+                        <Frame CornerRadius="20"
+                               HasShadow="True"
+                               Padding="5">
+                            <StackLayout Padding="10">
+                                <Label FontSize="25"
+                                       LineBreakMode="TailTruncation"
+                                       MaxLines="2"
+                                       Text="{Binding Title}" />
+                                <Label FontSize="18"
+                                       LineBreakMode="TailTruncation"
+                                       MaxLines="2"
+                                       Text="{Binding Description}" />
+                            </StackLayout>
+                        </Frame>
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
