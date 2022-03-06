@@ -4,7 +4,7 @@
              xmlns:viewmodels="clr-namespace:FirstMobileApp.ViewModels"
              xmlns:converters="clr-namespace:FirstMobileApp.Converters"
              x:Class="FirstMobileApp.Views.NoteView"
-             x:DataType="viewmodels:NoteViewModel">
+             x:DataType="viewmodels:NoteEditorViewModel">
     <ContentPage.Resources>
         <converters:InvertedBooleanConverter x:Key="InvertedBooleanConverted" />
     </ContentPage.Resources>

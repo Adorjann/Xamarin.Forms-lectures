@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace FirstMobileApp.DataAccess
 {
-    public class NotesRepository
+    public class NotesRepository : INotesRepository
     {
         private List<Note> _notes = new List<Note>();
 

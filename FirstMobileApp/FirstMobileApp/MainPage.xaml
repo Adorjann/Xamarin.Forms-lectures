@@ -5,9 +5,6 @@
              x:Class="FirstMobileApp.MainPage"
              x:DataType="viewmodels:MainViewModel">
 
-    <ContentPage.BindingContext>
-        <viewmodels:MainViewModel />
-    </ContentPage.BindingContext>
     <Grid Padding="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -19,7 +16,7 @@
                         SelectionChangedCommand="{Binding SelectedNoteChangedCommand}"
                         ItemsSource="{Binding NotesSource}">
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="viewmodels:NoteViewModel">
+                <DataTemplate x:DataType="viewmodels:NoteItemViewModel">
                     <StackLayout Margin="5">
                         <Frame CornerRadius="20"
                                HasShadow="True"

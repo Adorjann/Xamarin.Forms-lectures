@@ -1,4 +1,6 @@
-﻿using FirstMobileApp.Views;
+﻿using FirstMobileApp.DataAccess;
+using FirstMobileApp.Services;
+using FirstMobileApp.Views;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
@@ -8,13 +10,25 @@ namespace FirstMobileApp.ViewModels
 {
     public class MainViewModel : BaseViewModel
     {
-        private ObservableCollection<NoteViewModel> _notesSource;
-        private NoteViewModel _selectedNote;
+        private readonly INotesRepository _notesRepository;
+        private readonly INavigationService _navigationService;
+
+        private ObservableCollection<NoteItemViewModel> _notesSource;
+        private NoteItemViewModel _selectedNote;
+
+        public MainViewModel(INotesRepository notesRepository, INavigationService navigationService)
+        {
+            _navigationService = navigationService;
+            _notesRepository = notesRepository;
+            AddNoteCommand = new Command(OnAddNoteCommand);
+            SelectedNoteChangedCommand = new Command(OnSelectedNoteChangedCommand);
+            LoadNotes();
+        }
 
         public ICommand AddNoteCommand { get; }
         public ICommand SelectedNoteChangedCommand { get; }
 
-        public NoteViewModel SelectedNote
+        public NoteItemViewModel SelectedNote
         {
             get
             {
@@ -27,7 +41,7 @@ namespace FirstMobileApp.ViewModels
             }
         }
 
-        public ObservableCollection<NoteViewModel> NotesSource
+        public ObservableCollection<NoteItemViewModel> NotesSource
         {
             get => _notesSource;
             set
@@ -37,37 +51,24 @@ namespace FirstMobileApp.ViewModels
             }
         }
 
-        public MainViewModel()
+        public void LoadNotes()
         {
-            AddNoteCommand = new Command(OnAddNoteCommand);
-            SelectedNoteChangedCommand = new Command(OnSelectedNoteChangedCommand);
-            LoadNotes();
-        }
-
-        private void LoadNotes()
-        {
-            var notes = App.NotesRepository.GetAllNotes().Select(n => new NoteViewModel(n, LoadNotes));
-            NotesSource = new ObservableCollection<NoteViewModel>(notes);
+            var notes = _notesRepository.GetAllNotes().Select(n => new NoteItemViewModel(n));
+            NotesSource = new ObservableCollection<NoteItemViewModel>(notes);
         }
 
         private void OnSelectedNoteChangedCommand()
         {
             if (SelectedNote != null)
             {
-                Application.Current
-                    .MainPage
-                    .Navigation
-                    .PushModalAsync(new NoteView { BindingContext = SelectedNote });
+                _navigationService.NavigateToNoteEditor(SelectedNote.Note);
             }
             SelectedNote = null;
         }
 
         private void OnAddNoteCommand(object obj)
         {
-            Application.Current
-                .MainPage
-                .Navigation
-                .PushModalAsync(new NoteView { BindingContext = new NoteViewModel(LoadNotes) });
+            _navigationService.NavigatToNewNote();
         }
     }
 }
